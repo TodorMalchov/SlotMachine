@@ -1,0 +1,22 @@
+h1{
+    text-align:center;
+    color:rgb(121, 235, 197);
+    
+}
+#image-1{
+    text-align: center;
+    border: 2px solid rgb(121, 235, 197);
+    border-radius: 7px;
+    width: 400px;
+    height: 300px;
+    background-color: aliceblue;
+    background-image: #00fe32;
+    content: icon;
+}
+#enjoyButton{
+    width: 100px;
+    height: 40px;
+    color:#80ffbf;
+    background-color: #ff66ff;
+    border-radius: 5px;
+}
