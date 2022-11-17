@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="/slotMachine-game/gameLogic.js"></script>
     <h1>WELCOME TO THE GAME</h1>
     <div class="first-image">
         <img id="image-1" src="img2.png.">
@@ -16,16 +15,18 @@
     <div class="Enjoy-Button">
         <h2><button id="enjoyButton">ENJOY</button></h2>
     </div>
-    <div class="Spin-Buton">
-        <h2><button onclick="spin()" style="background-color:#ff66ff;color:#80ffbf;border-radius: 5px; width: 100px; height: 40px; text-shadow: 10px rgb(37, 36, 36);">SPIN</button></h2>
+    <div  class="Spin-Buton">
+        <h2><button id="spinButton" onclick="spin()">SPIN</button></h2>
+        
     </div>
-    <div class="money-bar">
-        <h3>Money</h3>
+    <div id="moneBarDIV" class="money-bar">
+        <h3 id="moneyBarHeading">Money</h3>
     </div>
-    <div class="Win-Bar">
-        <h2>WinBar</h2>
+    <div id="winBarDIV" class="Win-Bar">
+        <h2 id="winBarHeading">WinBar</h2>
     </div>
-
+    
+    <script src="gameLogic.js"></script>
     
 </body>
 </html>

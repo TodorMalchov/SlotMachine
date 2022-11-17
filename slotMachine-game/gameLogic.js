@@ -1,4 +1,8 @@
+let moneyAMount  = 100
 function spin(money){
+    money = moneyAMount 
+    
+    let isWin = false
 
     function firstLine(){
         let firstLineElement = Math.floor(Math.random() * 6)
@@ -69,32 +73,46 @@ function spin(money){
         console.log(`${resultFromFirstLine} ${resultSeconLine} ${resultLastLine}`)
         console.log('CONGRATOLATION YOU WIN')
         console.log('YOU WIN BIG PRIZE')
+        isWin = true
         money *= 5
     }else if(resultFromFirstLine === resultSeconLine && resultFromFirstLine != resultLastLine){
         console.log(`${resultFromFirstLine} ${resultSeconLine} ${resultLastLine}`)
         console.log('YOU WIN')
         console.log('YOU HAVE FIRST TWO ELEMENTS')
+        isWin = true
         money *= 1.25
     }else if(resultSeconLine === resultLastLine && resultFromFirstLine != resultSeconLine){
         console.log(`${resultFromFirstLine} ${resultSeconLine} ${resultLastLine}`)
         console.log('YOU WIN')
         console.log('YOU HAVE LAST TWO ELEMENTS')
+        isWin = true
         money *= 1.10
     }else if(resultFromFirstLine === resultLastLine){
         console.log(`${resultFromFirstLine} ${resultSeconLine} ${resultLastLine}`)
         console.log('YOU HAVE FIRST AND LAST ELEMENT')
         console.log('TRY AGAIN')
+        isWin = true
         money *= 1
-    }else{
+     }else{
         console.log(`${resultFromFirstLine} ${resultSeconLine} ${resultLastLine}`)
         console.log('YOU LOST')
         console.log('TRY AGAIN')
-        money = 0
+        moneyAMount = money - 2 * money
     }
-    if(money == 0){
-        console.log(`You have ${money}lv.`)
+    moneyAMount = moneyAMount + money
+
+    if(isWin){
+        console.log(`You win ${moneyAMount.toFixed(2)}lv.`)
+        
     }else{
-        console.log(`You win ${money.toFixed(2)}lv.`)
+        console.log(`You have ${moneyAMount}lv.`)
     }
+
+    let winBar = document.getElementById("winBarHeading")
+    winBar.innerHTML = money
+
+    let moneyBar = document.getElementById("moneyBarHeading")
+    moneyBar.innerHTML = moneyAMount
+
 }
-spin(100)
+spin(moneyAMount)
