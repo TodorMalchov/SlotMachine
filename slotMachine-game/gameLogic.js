@@ -1,6 +1,7 @@
 let moneyAMount  = 100
+let totalMoney = 0
 function spin(money){
-    money = moneyAMount 
+    money = moneyAMount
     
     let isWin = false
 
@@ -97,14 +98,15 @@ function spin(money){
         console.log(`${resultFromFirstLine} ${resultSeconLine} ${resultLastLine}`)
         console.log('YOU LOST')
         console.log('TRY AGAIN')
-        moneyAMount = money - 2 * money
+        moneyAMount = moneyAMount - 2 * money
     }
-    moneyAMount = moneyAMount + money
-
+    moneyAMount += money
+    
     if(isWin){
         console.log(`You win ${moneyAMount.toFixed(2)}lv.`)
         
     }else{
+        //money -= moneyAMount
         console.log(`You have ${moneyAMount}lv.`)
     }
 
